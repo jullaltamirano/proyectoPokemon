@@ -1,0 +1,35 @@
+.background {
+    display: flex;
+    justify-content: center;
+    background-image: url('../../media/landing_page.jpg');
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
+}  
+
+.button_link {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: transparent;
+    font-size: 3em;
+    font-weight: 900;
+    margin: 0px auto;
+    border: none;
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 3.5px black;
+    position: absolute;
+    bottom: 18vh;
+}
+  
+.button:hover {
+    cursor: pointer;
+}
+  
+.display {
+    display:none
+}

@@ -1,0 +1,15 @@
+.searchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 55, 55);
+    padding: 15px 40px;
+}
+
+.logo {
+    width: 10vw;
+}
+
+.lupa img {
+    width: 30px;
+}
