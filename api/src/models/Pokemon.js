@@ -32,6 +32,9 @@ module.exports = (sequelize) => {
     weight: {
       type: DataTypes.INTEGER
     },
+    sprite: {
+      type: DataTypes.STRING
+    },
     created: {
       type: DataTypes.BOOLEAN,
       allowNull: false,

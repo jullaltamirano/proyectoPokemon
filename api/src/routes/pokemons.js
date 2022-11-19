@@ -10,8 +10,6 @@ const getPokemon = async () => {
     const data1 = await response1.json()
 
     let poke40 = [...data.results, ...data1.results]
-
-    console.log(poke40)
     let dataPokemon = []
 
     for(let i = 0; i < poke40.length; i++){
@@ -56,7 +54,7 @@ const getPokemonByName = async (name) => {
 
         let uniquePokemon = [{
             id: data.id,
-            types: infoPokemon.types.map(e => {
+            types: data.types.map(e => {
                 return {name: e.type.name}
             }),
             name: data.name,
@@ -124,22 +122,27 @@ router.get('/', async (req,res) => {
         let totalPokemon = await getAll()
         res.status(200).json(totalPokemon)
     }
-} )
+})
 
 router.get('/:id', async (req,res) => {
 
     const { id } = req.params
-
-    let findPoke = await getPokemonByID(id)
-        
-    Object.keys(findPoke).length ? 
+    try {        
+        let allPokes = await getAll()
+        let findPoke = await allPokes.find(e => e.id == id)
+            
+        Object.keys(findPoke).length ? 
         res.status(200).json(findPoke) :
         res.status(404).send(`No existe ningun Pokemon con el id:${id}`)
+    } catch (err) {
+        console.log(err)
+    }
+        
 })
 
 router.post('/', async (req,res) => {
 
-    let {name,hp,attack,defense,speed,height,weight,created,types} = req.body
+    let {name,hp,attack,defense,speed,height,weight,sprite,types} = req.body
 
     let newPokemon = await Pokemon.create({
         name,
@@ -149,7 +152,7 @@ router.post('/', async (req,res) => {
         speed,
         height,
         weight,
-        created
+        sprite
     })
 
     let typesDb = await Type.findAll({

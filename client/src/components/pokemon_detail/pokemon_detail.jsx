@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
-import { getPokemonDetail } from '../../redux/actions'
+import { getPokemonDetail , emptyPokemonDetail } from '../../redux/actions'
+import Loading from '../loading/loading'
 
 export default function PokemonDetail(){
 
@@ -10,10 +11,19 @@ export default function PokemonDetail(){
     const pokemonDetail = useSelector((state) => state.pokemonDetail)    
 
     useEffect(() => {
+        dispatch(emptyPokemonDetail())
         dispatch(getPokemonDetail(id))
     },[])
-    return(
-        <div>
+
+    if(Object.keys(pokemonDetail).length === 0){
+        return (
+            <div>
+                <Loading />
+            </div>
+        )
+    } else {
+        return(
+            <div>
             <div>
                 <span>{`N°. ${pokemonDetail.id}`}</span>
                 <img src={pokemonDetail.sprite}/>
@@ -23,6 +33,13 @@ export default function PokemonDetail(){
                 <div>
                     <span>PROFILE</span>
                     <span>TYPE</span>
+                    <ul>
+                        {pokemonDetail.types?.map(e => {
+                            return (
+                                <li>{e.name}</li>
+                                )
+                            })}
+                    </ul>
                 </div>
                 <div>
                     <span>STATS</span>
@@ -38,4 +55,5 @@ export default function PokemonDetail(){
             </div>            
         </div>
     )
+}
 }

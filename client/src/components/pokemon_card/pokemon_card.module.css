@@ -20,10 +20,15 @@
     box-sizing: border-box;
 }
 
-.card_container img {
+.img_container {
+    height: 200px;
+}
+
+.img_container img {
     box-sizing: border-box;
     padding: 15px 0px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
 }
 
 .type_container {

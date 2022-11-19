@@ -90,6 +90,17 @@ const rootReducer = (state = initialState, action) => {
                 pokemons: []
             }
 
+        case 'EMPTY_POKEMON_DETAIL':
+            return {
+                ...state,
+                pokemonDetail: {}
+            }
+
+        case 'POST_CHARACTER':
+            return {
+                ...state
+            }
+
         default: return state
     }
 };

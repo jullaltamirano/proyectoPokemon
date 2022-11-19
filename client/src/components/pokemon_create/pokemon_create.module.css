@@ -1,0 +1,134 @@
+.background {
+    position: absolute;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+}
+
+.container {
+    height: 100vh;
+    background-color: rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container img{
+    height: 70vh;
+}
+
+.form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 35vw;
+    max-height: 80vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+}
+
+.title span {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.input_container {
+    margin-bottom: 10px;
+}
+
+.input_container label {
+    display: block;
+    font-weight: 600;
+}
+
+.input_container input {
+    border: none;
+    border-bottom: 1px solid lightgray;
+    width: 190px;
+}
+
+.input_container input:focus{ 
+    outline: none;
+}
+
+.types_container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+}
+
+.types_list {
+    text-transform: capitalize;
+    display: flex;
+    flex-direction: column;
+}
+
+.types_list input {
+    cursor: pointer;
+    background-color: #fff;
+    width: 16px;
+    height: 16px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    appearance: none;
+}
+
+.types_list input:checked {
+    cursor: pointer;
+    background-color: red;
+    border: 1px solid red;
+}
+
+.type {
+    font-size: 16px;
+    display: flex;
+    padding: 4px 0px;
+}
+
+.type div {
+    margin: 0px 5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}
+
+.error {
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+    color: red;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0px;
+}
+
+.submit button{
+    background-color: rgb(255, 55, 55);
+    border: none;
+    border-radius: 5px;
+    width: 120px;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}

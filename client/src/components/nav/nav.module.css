@@ -10,6 +10,27 @@
     width: 10vw;
 }
 
-.lupa img {
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.input_search {
+    height: 28px;
+    border-radius: 5px 0px 0px 5px;
+    border:none;
+    outline: none;
+    padding-left: 10px;
+}
+
+.lupa {    
+    border:none;
+    border-radius: 0px 5px 5px 0px;
     width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.lupa img {
+    width: 15px;
 }

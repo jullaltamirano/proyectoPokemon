@@ -8,7 +8,9 @@ export default function PokemonCard({ id , img , name , types }) {
             <Link to={`/pokemon/${id}`} className={s.h2}>
                 <h2>{name}</h2>
             </Link>
-            <img src={img} />
+            <div className={s.img_container}>
+                <img src={img} />
+            </div>
             <ul className={s.types}>
                 {
                 types?.map(e => {

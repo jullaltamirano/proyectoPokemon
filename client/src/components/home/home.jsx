@@ -5,6 +5,7 @@ import { getAllPokemon , filterPokemonByCreated , filterAscName , filterByAttack
 import s from './home.module.css'
 import Loading from "../loading/loading";
 import Paginado from "../pagination/pagination";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -78,7 +79,10 @@ export default function Home() {
         return (
             <div className={s.home_container}>
                 <div className={s.button_load_container}>
-                    <button onClick={(e) => handleClick(e)}>Cargar todos los Pokemon</button>
+                    <button onClick={(e) => handleClick(e)}>Load all Pokemon</button>
+                    <Link to='/create'>
+                        <button  className={s.create}>Create a Pokemon</button>
+                    </Link>
                 </div>
                 <div className={s.select_container}>
                     <div className={s.select}>
